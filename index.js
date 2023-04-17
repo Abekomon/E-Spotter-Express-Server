@@ -1,7 +1,7 @@
 const fetch = require('node-fetch')
 const express = require("express")
 const app = express()
-const port = 4000
+const port = process.env.PORT || 4000
 const cors = require("cors")
 
 app.use(express.urlencoded({extended: true}))
@@ -24,5 +24,5 @@ app.get('/:game', cors(), async (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}`) 
+  console.log(`Listening at https://espotter-server.herokuapp.com:${port}`) 
 })
